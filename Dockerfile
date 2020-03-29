@@ -1,7 +1,9 @@
-FROM ubuntu:16.04
-MAINTAINER Hong-She Liang <starofrainnight@gmail.com>
+FROM ubuntu:18.04
+LABEL MAINTAINER="Hong-She Liang <starofrainnight@gmail.com>"
 
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
+# Avoiding user interaction with tzdata
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
     openvpn \
